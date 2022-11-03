@@ -56,8 +56,10 @@ void loop() {
     if(reading != buttonState) {
       buttonState = reading;
       if(buttonState == LOW) {
+        if(state == 1 && !buttonWasPressed) {
         buttonWasPressed = HIGH;
         lastStateTime = millis();
+        }
       }
     }
   }
